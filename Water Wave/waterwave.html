@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Wave</title>
+    <link rel="stylesheet" href="./waterwave.css">
+</head>
+
+<body>
+    <div class="indicator">
+        <output name="result" for="completion">50</output>
+    </div>
+    <input id="completion" type="range" min="0" max="100">
+
+    <script>
+        const input = document.querySelector("input");
+        const indicator = document.querySelector(".indicator");
+        const output = document.querySelector("output");
+        input.addEventListener("input", (e) => {
+            setValue(e.target.value);
+        });
+        function setValue(val) {
+            output.value = val;
+            indicator.setAttribute("style", `--completion: ${val}%`);
+        }
+    </script>
+</body>
+
+</html>
