@@ -12,7 +12,7 @@ body {
 
 .button {
     --bouncing-offset: 0.35em;
-    --bg: 178, 605, 48%;
+    --bg: 178, 60%, 48%;
     background-color: hsl(var(--bg));
     color: var(--dark);
     border: 0;
