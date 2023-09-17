@@ -1,0 +1,77 @@
+body {
+    background-color: darkgray;
+    margin: 0;
+}
+
+.rafter {
+    display: flex;
+    justify-content: center;
+    border-top: 4px solid black;
+}
+
+.lamp {
+    position: relative;
+}
+
+.lamp:nth-child(1) {
+    transform: translate(-2px, 5px) rotate(-9deg);
+}
+
+.lamp:nth-child(3) {
+    transform: translate(2px, 5px) rotate(9deg);
+}
+
+.lamp::before {
+    content: '';
+    position: absolute;
+    border-bottom: 400px solid #ffffff80;
+    border-left: 50px solid transparent;
+    width: 25px;
+    height: 0;
+    border-right: 50px solid transparent;
+    top: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.lamp::after {
+    content: '';
+    position: absolute;
+    border-radius: 0 0 62.5px 62.5px;
+    width: 125px;
+    height: 62.5px;
+    background: #ffffff80;
+    top: 456px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.lamp[open]::before,
+.lamp[open]::after {
+    opacity: 1;
+}
+
+.lamp__icon {
+    list-style-image: none;
+    width: 64px;
+    height: 64px;   
+    position: relative;
+    cursor: pointer;
+    transition: opacity 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.lamp__icon:hover {
+    opacity: 0.6;
+}
+
+.lamp__icon::-webkit-details-marker {
+    background: none;
+    color: transparent;
+}
+
+.stage {
+    height: 400px;
+    border-bottom: 80px solid #272524;
+}
